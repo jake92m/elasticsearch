@@ -32,6 +32,10 @@ public class IndexAlreadyExistsException extends IndexException {
         super(index, "Already exists");
     }
 
+    public IndexAlreadyExistsException(Index index, String name, String desc) {
+        super(index, "Already exists, " + desc);
+    }
+
     @Override
     public RestStatus status() {
         return RestStatus.BAD_REQUEST;
